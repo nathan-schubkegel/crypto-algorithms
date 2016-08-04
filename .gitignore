@@ -1,0 +1,14 @@
+# ignore vim backup files
+*~
+
+# ignore visual studio files
+*.user
+*.suo
+*.ncb
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# ignore WinMerge comparison files
+*.bak
