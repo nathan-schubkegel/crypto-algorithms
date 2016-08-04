@@ -19,7 +19,7 @@ void arcfour_key_setup(BYTE state[], const BYTE key[], int len)
 	BYTE t;
 
 	for (i = 0; i < 256; ++i)
-		state[i] = i;
+		state[i] = (BYTE)i;
 	for (i = 0, j = 0; i < 256; ++i) {
 		j = (j + state[i] + key[i % len]) % 256;
 		t = state[i];

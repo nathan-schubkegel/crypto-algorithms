@@ -190,14 +190,14 @@ void blowfish_encrypt(const BYTE in[], BYTE out[], const BLOWFISH_KEY *keystruct
    r ^= keystruct->p[16];
    l ^= keystruct->p[17];
 
-   out[0] = l >> 24;
-   out[1] = l >> 16;
-   out[2] = l >> 8;
-   out[3] = l;
-   out[4] = r >> 24;
-   out[5] = r >> 16;
-   out[6] = r >> 8;
-   out[7] = r;
+   out[0] = (BYTE)(l >> 24);
+   out[1] = (BYTE)(l >> 16);
+   out[2] = (BYTE)(l >> 8);
+   out[3] = (BYTE)(l);
+   out[4] = (BYTE)(r >> 24);
+   out[5] = (BYTE)(r >> 16);
+   out[6] = (BYTE)(r >> 8);
+   out[7] = (BYTE)r;
 }
 
 void blowfish_decrypt(const BYTE in[], BYTE out[], const BLOWFISH_KEY *keystruct)
@@ -226,14 +226,14 @@ void blowfish_decrypt(const BYTE in[], BYTE out[], const BLOWFISH_KEY *keystruct
    r ^= keystruct->p[1];
    l ^= keystruct->p[0];
 
-   out[0] = l >> 24;
-   out[1] = l >> 16;
-   out[2] = l >> 8;
-   out[3] = l;
-   out[4] = r >> 24;
-   out[5] = r >> 16;
-   out[6] = r >> 8;
-   out[7] = r;
+   out[0] = (BYTE)(l >> 24);
+   out[1] = (BYTE)(l >> 16);
+   out[2] = (BYTE)(l >> 8);
+   out[3] = (BYTE)(l);
+   out[4] = (BYTE)(r >> 24);
+   out[5] = (BYTE)(r >> 16);
+   out[6] = (BYTE)(r >> 8);
+   out[7] = (BYTE)(r);
 }
 
 void blowfish_key_setup(const BYTE user_key[], BLOWFISH_KEY *keystruct, size_t len)

@@ -595,37 +595,37 @@ void AddRoundKey(BYTE state[][4], const WORD w[])
 
 	// memcpy(subkey,&w[idx],4); // Not accurate for big endian machines
 	// Subkey 1
-	subkey[0] = w[0] >> 24;
-	subkey[1] = w[0] >> 16;
-	subkey[2] = w[0] >> 8;
-	subkey[3] = w[0];
+	subkey[0] = (BYTE)(w[0] >> 24);
+	subkey[1] = (BYTE)(w[0] >> 16);
+	subkey[2] = (BYTE)(w[0] >> 8);
+	subkey[3] = (BYTE)(w[0]);
 	state[0][0] ^= subkey[0];
 	state[1][0] ^= subkey[1];
 	state[2][0] ^= subkey[2];
 	state[3][0] ^= subkey[3];
 	// Subkey 2
-	subkey[0] = w[1] >> 24;
-	subkey[1] = w[1] >> 16;
-	subkey[2] = w[1] >> 8;
-	subkey[3] = w[1];
+	subkey[0] = (BYTE)(w[1] >> 24);
+	subkey[1] = (BYTE)(w[1] >> 16);
+	subkey[2] = (BYTE)(w[1] >> 8);
+	subkey[3] = (BYTE)(w[1]);
 	state[0][1] ^= subkey[0];
 	state[1][1] ^= subkey[1];
 	state[2][1] ^= subkey[2];
 	state[3][1] ^= subkey[3];
 	// Subkey 3
-	subkey[0] = w[2] >> 24;
-	subkey[1] = w[2] >> 16;
-	subkey[2] = w[2] >> 8;
-	subkey[3] = w[2];
+	subkey[0] = (BYTE)(w[2] >> 24);
+	subkey[1] = (BYTE)(w[2] >> 16);
+	subkey[2] = (BYTE)(w[2] >> 8);
+	subkey[3] = (BYTE)(w[2]);
 	state[0][2] ^= subkey[0];
 	state[1][2] ^= subkey[1];
 	state[2][2] ^= subkey[2];
 	state[3][2] ^= subkey[3];
 	// Subkey 4
-	subkey[0] = w[3] >> 24;
-	subkey[1] = w[3] >> 16;
-	subkey[2] = w[3] >> 8;
-	subkey[3] = w[3];
+	subkey[0] = (BYTE)(w[3] >> 24);
+	subkey[1] = (BYTE)(w[3] >> 16);
+	subkey[2] = (BYTE)(w[3] >> 8);
+	subkey[3] = (BYTE)(w[3]);
 	state[0][3] ^= subkey[0];
 	state[1][3] ^= subkey[1];
 	state[2][3] ^= subkey[2];
@@ -685,7 +685,7 @@ void InvSubBytes(BYTE state[][4])
 // Performs the ShiftRows step. All rows are shifted cylindrically to the left.
 void ShiftRows(BYTE state[][4])
 {
-	int t;
+	BYTE t;
 
 	// Shift left by 1
 	t = state[1][0];
@@ -711,7 +711,7 @@ void ShiftRows(BYTE state[][4])
 // All rows are shifted cylindrically to the right.
 void InvShiftRows(BYTE state[][4])
 {
-	int t;
+	BYTE t;
 
 	// Shift right by 1
 	t = state[1][3];

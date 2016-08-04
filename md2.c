@@ -95,7 +95,7 @@ void md2_final(MD2_CTX *ctx, BYTE hash[])
 	to_pad = MD2_BLOCK_SIZE - ctx->len;
 
 	while (ctx->len < MD2_BLOCK_SIZE)
-		ctx->data[ctx->len++] = to_pad;
+		ctx->data[ctx->len++] = (BYTE)to_pad;
 
 	md2_transform(ctx, ctx->data);
 	md2_transform(ctx, ctx->checksum);

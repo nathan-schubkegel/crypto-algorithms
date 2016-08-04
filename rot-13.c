@@ -16,7 +16,8 @@
 /*********************** FUNCTION DEFINITIONS ***********************/
 void rot13(char str[])
 {
-   int case_type, idx, len;
+   char case_type;
+   int idx, len;
 
    for (idx = 0, len = strlen(str); idx < len; idx++) {
       // Only process alphabetic characters.
